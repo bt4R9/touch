@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+}
+.progress {
+    position: absolute;
+    top: 92px;
+    height: 5px;
+    width: 0%;
+    background: #f00;
+    transition: width 300ms;
+}
+.debug {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 92px;
+    background: #808080;
+    color: #fff;
+    font-family: "Helvetica Neue";
+    font-size: 11px;
+    text-align: center;
+}
+.box {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    margin: -100px -100px;
+    background: #000;
+    border-radius: 20px;
+    z-index: 2;
+}
+.msg {
+    position: relative;
+    display: block;
+    font-family: "Helvetica Neue";
+    font-size: 28px;
+    text-align: center;
+    color: #fff;
+    top: 50%;
+    margin-top: -51px;
+}
+.compass {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    margin: -100px -100px;
+    z-index: 1;
+}
+.compass__item {
+    overflow: hidden;
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    -webkit-transform-origin: 100px 100px;
+    opacity: 0;
+    transition: opacity 300ms, -webkit-transform 500ms;
+}
+.compass__item__inner {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #808080;
+    -webkit-transform: skew(30deg, 30deg) translate(40px, 40px);
+    transition: -webkit-transform 500ms, box-shadow 400ms;
+}
+.north {
+    -webkit-transform: rotate(45deg) translate(-100px, -100px);
+}
+.south {
+    -webkit-transform: rotate(225deg) translate(-100px, -100px);
+}
+.west {
+    -webkit-transform: rotate(135deg) translate(-100px, -100px);
+}
+.east {
+    -webkit-transform: rotate(315deg) translate(-100px, -100px);
+}
+.compose__item__north {
+    background: #8b008b;
+}
+.compose__item__south {
+    background: #8b008b;
+}
+.compose__item__west {
+    background: #8b008b;
+}
+.compose__item__east {
+    background: #8b008b;
+}
+.compass__active .compass {
+    z-index: 2;
+}
+.compass__active .box {
+    z-index: 1;
+}
+.compass__active .compass__item {
+    opacity: 1;
+}
+.compass__active .north {
+    -webkit-transform: rotate(45deg) translate(-20px, -20px);
+}
+.compass__active .north.compass__item__active {
+    -webkit-transform: rotate(45deg) translate(-40px, -40px);
+}
+.compass__active .south {
+    -webkit-transform: rotate(225deg) translate(-20px, -20px);
+}
+.compass__active .south.compass__item__active {
+    -webkit-transform: rotate(225deg) translate(-40px, -40px);
+}
+.compass__active .west {
+    -webkit-transform: rotate(135deg) translate(-20px, -20px);
+}
+.compass__active .west.compass__item__active {
+    -webkit-transform: rotate(135deg) translate(-40px, -40px);
+}
+.compass__active .east {
+    -webkit-transform: rotate(315deg) translate(-20px, -20px);
+}
+.compass__active .east.compass__item__active {
+    -webkit-transform: rotate(315deg) translate(-40px, -40px);
+}
+.compass__active .compass__item__active .compass__item__inner {
+    box-shadow: 0 0 10px 10px #f00;
+    transition: box-shadow 400ms;
+}
+.notification {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 120px;
+    background: rgba(0,0,0,0.65);
+    color: #fff;
+    font-family: "Helvetica Neue";
+    font-size: 36px;
+    text-align: center;
+    line-height: 120px;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transition: -webkit-transform 400ms;
+}
+.notification__active {
+    -webkit-transform: translate3d(0, 0, 0);
+    transition: -webkit-transform 400ms;
+}
